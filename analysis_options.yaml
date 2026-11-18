@@ -1,0 +1,22 @@
+# Static analysis for SokoMail. Run with `flutter analyze`.
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+
+linter:
+  rules:
+    always_declare_return_types: true
+    always_use_package_imports: true
+    avoid_dynamic_calls: true
+    cancel_subscriptions: true
+    directives_ordering: true
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_final_locals: true
+    prefer_single_quotes: true
+    unawaited_futures: true
+    use_super_parameters: true

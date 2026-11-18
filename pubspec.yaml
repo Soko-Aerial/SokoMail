@@ -1,0 +1,61 @@
+name: sokomail
+description: "SokoMail - secure company email for SokoAerial Robotics (Android, iOS, Web)."
+# Private application: never publish to pub.dev.
+publish_to: 'none'
+
+# Android: versionName+versionCode. iOS: CFBundleShortVersionString+CFBundleVersion.
+# Override at build time with --build-name / --build-number.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+# Keep this list minimal. Every dependency must be justified in
+# docs/architecture/decisions.md before it is added.
+dependencies:
+  flutter:
+    sdk: flutter
+  # Path-based browser URLs (/mail/...) instead of hash URLs on the web.
+  flutter_web_plugins:
+    sdk: flutter
+
+  # Material 3 widgets. Material was decoupled from the framework in
+  # Flutter 3.44; go_router and Riverpod already build on this package.
+  material_ui: ^1.2.0
+  # iOS-style page transitions on every platform (CupertinoPageTransitionsBuilder).
+  cupertino_ui: ^1.0.2
+  # State management and dependency injection.
+  flutter_riverpod: ^3.5.0
+  # Declarative routing, deep links and browser URLs.
+  go_router: ^18.1.4
+  # HTTP client for the future SokoMail Go REST API.
+  dio: ^5.11.1
+  # Persists non-sensitive preferences (theme, sidebar) on device / browser.
+  shared_preferences: ^2.5.6
+  # Native file picker for compose attachments (Android, iOS, web).
+  file_selector: ^1.1.0
+
+  # Shipped with the Flutter template. Not used by the app yet.
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  # In-memory shared_preferences backend for persistence tests.
+  shared_preferences_platform_interface: ^2.4.2
+  # Generates the Android, iOS and web app icons from assets/branding/
+  # (config: flutter_launcher_icons.yaml). Build-time tool, not in the app.
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+
+  # Assets live in assets/images, assets/icons and assets/fonts. Declare a
+  # folder here only once it contains real files (see docs/architecture/folder_structure.md).
+  # assets/branding holds the app icon source artwork; it is never bundled.
+  # assets:
+  #   - assets/images/
+  #   - assets/icons/

@@ -1,0 +1,30 @@
+# App icons for Android, iOS and the web, generated from the source artwork
+# in assets/branding/. After changing the artwork, run:
+#
+#   dart run flutter_launcher_icons
+#
+# The current artwork is a PLACEHOLDER (an envelope in SokoMail's colours,
+# rendered by test/tool/app_icon_test.dart). To use the official SokoAerial
+# Robotics logo, replace both PNGs (1024 x 1024) and run the command above:
+#   app_icon.png             full square, opaque background (iOS, web, older Android)
+#   app_icon_foreground.png  logo only on transparency, centred with padding
+#                            (Android adaptive and themed icons)
+# See docs/architecture/decisions.md, ADR-019.
+flutter_launcher_icons:
+  image_path: "assets/branding/app_icon.png"
+
+  android: true
+  min_sdk_android: 24
+  adaptive_icon_background: "#283423" # AppColors.deepGreen
+  adaptive_icon_foreground: "assets/branding/app_icon_foreground.png"
+  adaptive_icon_foreground_inset: 16
+  adaptive_icon_monochrome: "assets/branding/app_icon_foreground.png"
+
+  ios: true
+  remove_alpha_ios: true
+  background_color_ios: "#283423"
+
+  web:
+    generate: true
+    background_color: "#F7F6F1" # AppColors.lightBackground (install splash)
+    theme_color: "#283423"
